@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/redux-base/actions/inventory/itemFlow.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/redux-base/actions/inventory</a> itemFlow.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  createRequestTypes,
+  createRequestFunc,
+  createParallelRequestFunc
+} from 'utils';
+import { addActionsToSagas } from 'redux-base/sagas/actionsHelper';
+&nbsp;
+// ------------------------Action constants---------------
+export const ITEM_INFO_GET_PARALLEL = createRequestTypes('ITEM_INFO_GET_PARALLEL');
+export const ITEM_INFO_GET = createRequestTypes('ITEM_INFO_GET');
+export const ITEM_INFO_SAVE = createRequestTypes('ITEM_INFO_SAVE');
+export const ITEM_INFO_UPDATE = createRequestTypes('ITEM_INFO_UPDATE');
+&nbsp;
+export const ITEM_BINS_GET = createRequestTypes('ITEM_BINS_GET');
+export const ITEM_BINS_SAVE = createRequestTypes('ITEM_BINS_SAVE');
+export const ITEM_BINS_UPDATE = createRequestTypes('ITEM_BINS_UPDATE');
+&nbsp;
+export const ITEM_SUPPLIERS_GET = createRequestTypes('ITEM_SUPPLIERS_GET');
+export const ITEM_SUPPLIERS_SAVE = createRequestTypes('ITEM_SUPPLIERS_SAVE');
+export const ITEM_SUPPLIERS_UPDATE = createRequestTypes('ITEM_SUPPLIERS_UPDATE');
+&nbsp;
+export const ITEM_UOM_GET = createRequestTypes('ITEM_UOM_GET');
+export const ITEM_UOM_SAVE = createRequestTypes('ITEM_UOM_SAVE');
+export const ITEM_UOM_UPDATE = createRequestTypes('ITEM_UOM_UPDATE');
+export const ITEM_UOM_DELETE = createRequestTypes('ITEM_UOM_DELETE');
+&nbsp;
+export const ITEM_SLC_GET = createRequestTypes('ITEM_SLC_GET');
+export const ITEM_SLC_SAVE = createRequestTypes('ITEM_SLC_SAVE');
+export const ITEM_SLC_UPDATE = createRequestTypes('ITEM_SLC_UPDATE');
+export const ITEM_SLC_MOVE_UPDATE = createRequestTypes('ITEM_SLC_MOVE_UPDATE');
+&nbsp;
+export const ITEM_IMAGES_GET = createRequestTypes('ITEM_IMAGES_GET');
+export const ITEM_IMAGES_SAVE = createRequestTypes('ITEM_IMAGES_SAVE');
+export const ITEM_IMAGES_DELETE = createRequestTypes('ITEM_IMAGES_DELETE');
+&nbsp;
+// ------------------------Action creators---------------
+export const itemInfoGetParallelRequest = createParallelRequestFunc(ITEM_INFO_GET_PARALLEL, ['sku/{id}', 'uoms']);
+export const itemInfoGetRequest = createRequestFunc(ITEM_INFO_GET, 'sku/{id}');
+export const itemInfoSaveRequest = createRequestFunc(ITEM_INFO_SAVE, 'sku');
+export const itemInfoUpdateRequest = createRequestFunc(ITEM_INFO_UPDATE, 'sku');
+&nbsp;
+export const itemBinsGetRequest = createRequestFunc(ITEM_BINS_GET, 'sku/{id}/bins');
+export const itemBinsSaveRequest = createRequestFunc(ITEM_BINS_SAVE, 'sku/{id}/bins');
+export const itemBinsUpdateRequest = createRequestFunc(ITEM_BINS_UPDATE, 'sku/{id}/bins');
+&nbsp;
+export const itemSuppliersGetRequest = createRequestFunc(ITEM_SUPPLIERS_GET, 'sku/{id}/vendors');
+export const itemSuppliersSaveRequest = createRequestFunc(ITEM_SUPPLIERS_SAVE, 'sku/{id}/vendors');
+export const itemSuppliersUpdateRequest = createRequestFunc(ITEM_SUPPLIERS_UPDATE, 'sku/{id}/vendors');
+&nbsp;
+export const itemUOMGetRequest = createRequestFunc(ITEM_UOM_GET, 'sku/{id}/uoms');
+export const itemUOMSaveRequest = createRequestFunc(ITEM_UOM_SAVE, 'sku/{id}/uoms');
+export const itemUOMUpdateRequest = createRequestFunc(ITEM_UOM_UPDATE, 'sku/{id}/uoms');
+export const itemUOMDeleteRequest = createRequestFunc(ITEM_UOM_DELETE, 'sku/{id}/uom/{mappingId}');
+&nbsp;
+export const itemStockLifeCycleGetRequest = createRequestFunc(ITEM_SLC_GET, 'sku/{id}/slcs');
+export const itemStockLifeCycleSaveRequest = createRequestFunc(ITEM_SLC_SAVE, 'sku/{id}/slc');
+export const itemStockLifeCycleUpdateRequest = createRequestFunc(ITEM_SLC_UPDATE, 'sku/{id}/slc');
+export const itemStockLifeCycleMoveUpdateRequest = createRequestFunc(ITEM_SLC_MOVE_UPDATE, 'sku/{id}/slc/{slcId}/move');
+&nbsp;
+export const itemImagesGetRequest = createRequestFunc(ITEM_IMAGES_GET, 'sku/{id}/images');
+export const itemImageSaveRequest = createRequestFunc(ITEM_IMAGES_SAVE, 'sku/{id}/image');
+export const itemImagesDeleteRequest = createRequestFunc(ITEM_IMAGES_DELETE, 'sku/{id}/image/{imageId}');
+&nbsp;
+// -------------------Add actions to Sagas --------------
+addActionsToSagas([
+  ITEM_INFO_GET_PARALLEL,
+  ITEM_INFO_GET,
+  ITEM_INFO_SAVE,
+  ITEM_INFO_UPDATE,
+&nbsp;
+  ITEM_BINS_GET,
+  ITEM_BINS_SAVE,
+  ITEM_BINS_UPDATE,
+&nbsp;
+  ITEM_SUPPLIERS_GET,
+  ITEM_SUPPLIERS_SAVE,
+  ITEM_SUPPLIERS_UPDATE,
+&nbsp;
+  ITEM_UOM_GET,
+  ITEM_UOM_SAVE,
+  ITEM_UOM_UPDATE,
+  ITEM_UOM_DELETE,
+&nbsp;
+  ITEM_SLC_GET,
+  ITEM_SLC_SAVE,
+  ITEM_SLC_UPDATE,
+  ITEM_SLC_MOVE_UPDATE,
+&nbsp;
+  ITEM_IMAGES_GET,
+  ITEM_IMAGES_SAVE,
+  ITEM_IMAGES_DELETE,
+]);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

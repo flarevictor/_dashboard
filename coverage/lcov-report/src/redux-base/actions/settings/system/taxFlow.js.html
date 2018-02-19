@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/redux-base/actions/settings/system/taxFlow.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/redux-base/actions/settings/system</a> taxFlow.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">190x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  createRequestTypes,
+  createRequestFunc,
+  createParallelRequestFunc
+} from 'utils';
+import { addActionsToSagas } from 'redux-base/sagas/actionsHelper';
+&nbsp;
+// ------------------------Action constants---------------
+export const TAX_CODES_GET = createRequestTypes('TAX_CODES_GET');
+export const TAX_CODES_SAVE = createRequestTypes('TAX_CODES_SAVE');
+export const TAX_CODES_UPDATE = createRequestTypes('TAX_CODES_UPDATE');
+export const TAX_CODES_DELETE = createRequestTypes('TAX_CODES_DELETE');
+&nbsp;
+export const TAX_CATEGORIES_GET_PARALLEL = createRequestTypes('TAX_CATEGORIES_GET_PARALLEL');
+export const TAX_CATEGORIES_SAVE = createRequestTypes('TAX_CATEGORIES_SAVE');
+export const TAX_CATEGORIES_UPDATE = createRequestTypes('TAX_CATEGORIES_UPDATE');
+export const TAX_CATEGORIES_DELETE = createRequestTypes('TAX_CATEGORIES_DELETE');
+&nbsp;
+// ------------------------Action creators---------------
+export const taxCodesGetRequest = createRequestFunc(TAX_CODES_GET, 'tax/rates');
+export const taxCodesSaveRequest = createRequestFunc(TAX_CODES_SAVE, 'tax/rates');
+export const taxCodesUpdateRequest = createRequestFunc(TAX_CODES_UPDATE, 'tax/rates');
+export const taxCodesDeleteRequest = createRequestFunc(TAX_CODES_DELETE, 'tax/rates/{id}');
+&nbsp;
+export const taxCategoriesGetRequest = createParallelRequestFunc(TAX_CATEGORIES_GET_PARALLEL, ['tax/categories', 'tax/rates']);
+export const taxCategoriesSaveRequest = createRequestFunc(TAX_CATEGORIES_SAVE, 'tax/categories');
+export const taxCategoriesUpdateRequest = createRequestFunc(TAX_CATEGORIES_UPDATE, 'tax/categories');
+export const taxCategoriesDeleteRequest = createRequestFunc(TAX_CATEGORIES_DELETE, 'tax/categories/{id}');
+&nbsp;
+// -------------------Add actions to Sagas -------------
+addActionsToSagas([
+  TAX_CODES_GET,
+  TAX_CODES_SAVE,
+  TAX_CODES_UPDATE,
+  TAX_CODES_DELETE,
+&nbsp;
+  TAX_CATEGORIES_GET_PARALLEL,
+  TAX_CATEGORIES_SAVE,
+  TAX_CATEGORIES_UPDATE,
+  TAX_CATEGORIES_DELETE
+]);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

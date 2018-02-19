@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/redux-base/reducers/inventory/item.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/redux-base/reducers/inventory</a> item.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.59% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>39/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  ITEM_INFO_GET_PARALLEL,
+  ITEM_INFO_GET,
+  ITEM_INFO_SAVE,
+  ITEM_INFO_UPDATE,
+  ITEM_BINS_GET,
+  ITEM_BINS_SAVE,
+  ITEM_BINS_UPDATE,
+  ITEM_SUPPLIERS_GET,
+  ITEM_SUPPLIERS_SAVE,
+  ITEM_SUPPLIERS_UPDATE,
+  ITEM_UOM_GET,
+  ITEM_UOM_SAVE,
+  ITEM_UOM_UPDATE,
+  ITEM_UOM_DELETE,
+  ITEM_SLC_GET,
+  ITEM_SLC_SAVE,
+  ITEM_SLC_UPDATE,
+  ITEM_SLC_MOVE_UPDATE,
+  ITEM_IMAGES_GET,
+  ITEM_IMAGES_SAVE,
+  ITEM_IMAGES_DELETE,
+  ERROR
+} from 'redux-base/actions';
+&nbsp;
+// --------------------------- Reducer function --------------------------
+const initialState = {
+  itemInfo: {},
+  bins: [],
+  availableBins: [],
+  suppliers: [],
+  uoms: [],
+  stockLifeCycles: [],
+  images: [],
+  loadingPage: false,
+  needReloadBins: false,
+  needReloadUOM: false,
+  needReloadSuppliers: false,
+  needReloadSLC: false,
+  needReloadImages: false,
+};
+&nbsp;
+export default function item(state = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  switch (action.type) {
+    case ITEM_INFO_GET_PARALLEL.REQUEST:
+    case ITEM_INFO_GET.REQUEST:
+    case ITEM_INFO_SAVE.REQUEST:
+    case ITEM_INFO_UPDATE.REQUEST:
+    case ITEM_BINS_GET.REQUEST:
+    case ITEM_BINS_SAVE.REQUEST:
+    case ITEM_BINS_UPDATE.REQUEST:
+    case ITEM_SUPPLIERS_GET.REQUEST:
+    case ITEM_SUPPLIERS_SAVE.REQUEST:
+    case ITEM_SUPPLIERS_UPDATE.REQUEST:
+    case ITEM_UOM_GET.REQUEST:
+    case ITEM_UOM_SAVE.REQUEST:
+    case ITEM_UOM_UPDATE.REQUEST:
+    case ITEM_UOM_DELETE.REQUEST:
+    case ITEM_SLC_GET.REQUEST:
+    case ITEM_SLC_SAVE.REQUEST:
+    case ITEM_SLC_UPDATE.REQUEST:
+    case ITEM_SLC_MOVE_UPDATE.REQUEST:
+    case ITEM_IMAGES_GET.REQUEST:
+    case ITEM_IMAGES_SAVE.REQUEST:
+    case ITEM_IMAGES_DELETE.REQUEST:
+      return {
+        ...state,
+        loadingPage: true,
+        needReloadBins: false,
+        needReloadUOM: false,
+        needReloadSuppliers: false,
+        needReloadSLC: false,
+        needReloadImages: false,
+      };
+    case ITEM_INFO_GET_PARALLEL.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        itemInfo: action.data[0]
+      };
+    case ITEM_INFO_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        itemInfo: action.data
+      };
+    case ITEM_INFO_SAVE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        itemInfo: action.data
+      };
+    case ITEM_INFO_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        itemInfo: action.data
+      };
+    case ITEM_BINS_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        bins: action.data.bins,
+        availableBins: action.data.availableBins
+      };
+    case ITEM_BINS_SAVE.SUCCESS:
+    case ITEM_BINS_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadBins: true
+      };
+    case ITEM_SUPPLIERS_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        suppliers: action.data
+      };
+    case ITEM_SUPPLIERS_SAVE.SUCCESS:
+    case ITEM_SUPPLIERS_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadSuppliers: true
+      };
+    case ITEM_UOM_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        uoms: action.data,
+      };
+    case ITEM_UOM_SAVE.SUCCESS:
+    case ITEM_UOM_UPDATE.SUCCESS:
+    case ITEM_UOM_DELETE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadUOM: true
+      };
+<span class="branch-35 cbranch-no" title="branch not covered" >    case ITEM_SLC_GET.SUCCESS:</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...state,
+        loadingPage: false,
+        stockLifeCycles: action.data,
+      };
+<span class="branch-36 cbranch-no" title="branch not covered" >    case ITEM_SLC_SAVE.SUCCESS:</span>
+<span class="branch-37 cbranch-no" title="branch not covered" >    case ITEM_SLC_MOVE_UPDATE.SUCCESS:</span>
+<span class="branch-38 cbranch-no" title="branch not covered" >    case ITEM_SLC_UPDATE.SUCCESS:</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...state,
+        loadingPage: false,
+        needReloadSLC: true
+      };
+<span class="branch-39 cbranch-no" title="branch not covered" >    case ITEM_IMAGES_GET.SUCCESS:</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...state,
+        loadingPage: false,
+        images: action.data
+      };
+<span class="branch-40 cbranch-no" title="branch not covered" >    case ITEM_IMAGES_SAVE.SUCCESS:</span>
+<span class="branch-41 cbranch-no" title="branch not covered" >    case ITEM_IMAGES_DELETE.SUCCESS:</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...state,
+        loadingPage: false,
+        needReloadImages: true
+      };
+    case '@@router/LOCATION_CHANGE': {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (action.payload.pathname.includes('all-items/')) {
+<span class="cstat-no" title="statement not covered" >        return initialState;</span>
+      }
+      return state;
+    }
+    case ERROR:
+      return {
+        ...state,
+        loadingPage: false,
+      };
+    default:
+      return state;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

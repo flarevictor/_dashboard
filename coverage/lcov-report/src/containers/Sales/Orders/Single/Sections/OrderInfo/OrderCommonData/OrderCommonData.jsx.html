@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/containers/Sales/Orders/Single/Sections/OrderInfo/OrderCommonData/OrderCommonData.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../../index.html">All files</a> / <a href="index.html">src/containers/Sales/Orders/Single/Sections/OrderInfo/OrderCommonData</a> OrderCommonData.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.43% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Row, Col } from 'react-flexbox-grid';
+import moment from 'moment';
+import { connect } from 'react-redux';
+import {
+  FormDatePicker,
+  FormSelect,
+  FormInput
+} from 'components';
+import { Field, formValueSelector } from 'redux-form';
+import { deliveryInfoParallelRequest } from 'redux-base/actions';
+import { getMenuItems } from 'utils';
+import getColorByStatus from './getColorByStatus';
+&nbsp;
+const selector = formValueSelector('newOrderForm');
+&nbsp;
+const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  payterms: state.commonData.payterms,
+  deliveryMethods: state.commonData.deliveryMethods,
+  deliveryMethodInfo: state.commonData.deliveryMethodInfo,
+  deliverySlotsInfo: state.commonData.deliverySlotsInfo,
+  status: state.order.initialValues.status,
+  channelId: state.order.initialValues.channel.id,
+  defaultCustomerAddress: state.order.defaultCustomerAddress,
+  customerName: selector(state, 'customer.name'),
+  deliveryDate: selector(state, 'deliveryDate'),
+  deliveryMethodId: selector(state, 'deliveryMethodId')
+});
+&nbsp;
+const mapDispatchToProps = { deliveryInfoParallelRequest };
+&nbsp;
+class OrderCommonData extends Component {
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(nextProps) {
+    const {
+      disabled,
+      deliveryMethodId,
+      deliveryDate,
+      defaultCustomerAddress,
+      customerName
+    } = <span class="cstat-no" title="statement not covered" >nextProps;</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (!disabled) {</span>
+      // load slots and delivery days when delivery method is selected
+<span class="cstat-no" title="statement not covered" >      if (deliveryMethodId</span>
+        &amp;&amp; deliveryMethodId !== this.props.deliveryMethodId) {
+<span class="cstat-no" title="statement not covered" >        this.props.deliveryInfoParallelRequest({</span>
+          params: [{
+            id: deliveryMethodId
+          }, {
+            id: deliveryMethodId
+          }]
+        });
+      }
+&nbsp;
+      // Reset delivery slot on delivery date change
+<span class="cstat-no" title="statement not covered" >      if (this.props.deliveryDate</span>
+        &amp;&amp; deliveryDate !== this.props.deliveryDate) {
+<span class="cstat-no" title="statement not covered" >        this.props.onFieldChange('deliverySlotId', null);</span>
+      }
+&nbsp;
+      // initialize shipping and billing address when default customer address loaded
+<span class="cstat-no" title="statement not covered" >      if (defaultCustomerAddress</span>
+       &amp;&amp; defaultCustomerAddress.id !== this.props.defaultCustomerAddress.id) {
+<span class="cstat-no" title="statement not covered" >        this.props.onFieldChange('shippingAddress', {</span>
+          id: defaultCustomerAddress.id,
+          name: customerName,
+          address: defaultCustomerAddress
+        });
+<span class="cstat-no" title="statement not covered" >        this.props.onFieldChange('billingAddress', {</span>
+          id: defaultCustomerAddress.id,
+          name: customerName,
+          address: defaultCustomerAddress
+        });
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  re</span>nder() {
+    const {
+      // form
+      status,
+      channelId,
+      deliveryMethodId,
+      deliveryDate,
+      // static data
+      deliveryMethods,
+      deliveryMethodInfo,
+      deliverySlotsInfo,
+      payterms,
+      // state
+      disabled
+    } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+&nbsp;
+    let deliveryMethodsMenuItems = <span class="cstat-no" title="statement not covered" >[];</span>
+    let slotsMenuItems = <span class="cstat-no" title="statement not covered" >[];</span>
+    let paymentTermsMenuItems = <span class="cstat-no" title="statement not covered" >[];</span>
+    let firstActiveDeliveryDate = <span class="cstat-no" title="statement not covered" >null;</span>
+    let lastActiveDeliveryDate = <span class="cstat-no" title="statement not covered" >null;</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (disabled) {</span>
+      // load all select data, even disabled or not active so select values can be populated
+<span class="cstat-no" title="statement not covered" >      deliveryMethodsMenuItems = getMenuItems(deliveryMethods);</span>
+<span class="cstat-no" title="statement not covered" >      paymentTermsMenuItems = getMenuItems(payterms);</span>
+<span class="cstat-no" title="statement not covered" >      slotsMenuItems = getMenuItems(deliveryMethods.find(<span class="fstat-no" title="function not covered" >dm</span> =&gt; <span class="cstat-no" title="statement not covered" >dm.id === deliveryMethodId)</span>.slots);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      deliveryMethodsMenuItems = getMenuItems(deliveryMethods.filter(<span class="fstat-no" title="function not covered" >dm</span> =&gt; <span class="cstat-no" title="statement not covered" >dm.isActive)</span>);</span>
+&nbsp;
+      // get slots by delivery date
+<span class="cstat-no" title="statement not covered" >      if (deliveryMethodId &amp;&amp; deliveryDate) {</span>
+        const deliveryInfo = <span class="cstat-no" title="statement not covered" >deliverySlotsInfo.find(<span class="fstat-no" title="function not covered" >dm</span> =&gt; <span class="cstat-no" title="statement not covered" >dm.id === moment(deliveryDate, 'DD-MMMM-YYYY').isoWeekday())</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (deliveryInfo &amp;&amp; deliveryInfo.slots) {</span>
+<span class="cstat-no" title="statement not covered" >          slotsMenuItems = deliveryInfo.slots.map(<span class="fstat-no" title="function not covered" >sl</span>ot =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+            key: slot.id,
+            value: `${slot.from} - ${slot.to}`
+          }));
+        }
+      }
+&nbsp;
+      // get delivery days by delivery method
+<span class="cstat-no" title="statement not covered" >      if (deliveryMethodId &amp;&amp; deliveryMethodInfo.calLeadDays) {</span>
+        const { calLeadDays, calVisibleDays } = <span class="cstat-no" title="statement not covered" >deliveryMethodInfo;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        firstActiveDeliveryDate = moment().add(calLeadDays, 'd').startOf('day');</span>
+<span class="cstat-no" title="statement not covered" >        lastActiveDeliveryDate = moment().add(calLeadDays + calVisibleDays, 'd').startOf('day');</span>
+      }
+&nbsp;
+      // get payment terms by channel
+<span class="cstat-no" title="statement not covered" >      paymentTermsMenuItems = getMenuItems(payterms.filter(<span class="fstat-no" title="function not covered" >pt</span> =&gt; <span class="cstat-no" title="statement not covered" >pt.channels &amp;&amp; pt.channels.includes(channelId))</span>);</span>
+    }
+&nbsp;
+    const statusColor = <span class="cstat-no" title="statement not covered" >getColorByStatus(status);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;div&gt;
+        &lt;Row middle="xs"&gt;
+          &lt;Col xs sm md lg&gt;
+            &lt;div
+              style={ {
+                textAlign: 'center',
+                borderRadius: '1rem',
+                padding: '0.4rem 2rem',
+                color: 'white',
+                backgroundColor: statusColor,
+                width: 'fit-content',
+                marginLeft: 'auto'
+              } }
+            &gt;
+              { status }
+            &lt;/div&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col xs&gt;
+            &lt;strong&gt;
+              Order Channel
+            &lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="channel.name"
+              disabled
+              component={ FormInput }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col xs&gt;
+            &lt;strong&gt;
+              Channel Ref
+            &lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="channelRefNo"
+              disabled
+              component={ FormInput }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col xs&gt;
+            &lt;strong&gt;Order Date&lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="orderDate"
+              disabled={ disabled }
+              activeFromToday
+              component={ FormDatePicker }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col&gt;
+            &lt;strong&gt;Payment Terms&lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="paymentTerms.id"
+              placeholder="Payment Term"
+              component={ FormSelect }
+              menuItems={ paymentTermsMenuItems }
+              disabled={ disabled }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col&gt;
+            &lt;strong&gt;Delivery Method&lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="deliveryMethodId"
+              placeholder="Delivery Method"
+              component={ FormSelect }
+              menuItems={ deliveryMethodsMenuItems }
+              disabled={ disabled }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col&gt;
+            &lt;strong&gt;
+              Expected Delivery Date
+            &lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="deliveryDate"
+              firstActiveDate={ firstActiveDeliveryDate }
+              lastActiveDate={ lastActiveDeliveryDate }
+              component={ FormDatePicker }
+              disabled={ disabled || !deliveryMethodId }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Row middle="xs" end="xs"&gt;
+          &lt;Col&gt;
+            &lt;strong&gt;Delivery Slot&lt;/strong&gt;
+          &lt;/Col&gt;
+          &lt;Col xs md={ 8 } lg={ 4 }&gt;
+            &lt;Field
+              name="deliverySlotId"
+              placeholder="Delivery Slot"
+              component={ FormSelect }
+              menuItems={ slotsMenuItems }
+              disabled={ disabled || !deliveryDate }
+            /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;
+OrderCommonData.propTypes = {
+  // static data
+  payterms: PropTypes.array,
+  slots: PropTypes.array,
+  deliveryMethods: PropTypes.array,
+  deliveryMethodInfo: PropTypes.object,
+  deliverySlotsInfo: PropTypes.array,
+&nbsp;
+  // props
+  defaultCustomerAddress: PropTypes.object,
+&nbsp;
+  // form data
+  channelId: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  deliveryMethodId: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  deliveryDate: PropTypes.string,
+  customerName: PropTypes.string,
+  // redux-form
+  onFieldChange: PropTypes.func.isRequired,
+  // redux-base
+  deliveryInfoParallelRequest: PropTypes.func.isRequired,
+  // state data
+  disabled: PropTypes.bool.isRequired,
+};
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(OrderCommonData);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../../sorter.js"></script>
+</body>
+</html>

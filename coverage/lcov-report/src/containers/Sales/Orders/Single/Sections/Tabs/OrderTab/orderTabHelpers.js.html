@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/containers/Sales/Orders/Single/Sections/Tabs/OrderTab/orderTabHelpers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../../index.html">All files</a> / <a href="index.html">src/containers/Sales/Orders/Single/Sections/Tabs/OrderTab</a> orderTabHelpers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.64% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment';
+import { percentageFormatter, percentageParser } from 'utils';
+&nbsp;
+export const columns = <span class="fstat-no" title="function not covered" >di</span>sabled =&gt; <span class="cstat-no" title="statement not covered" >[{</span>
+  title: 'SKU',
+  type: 'skuAutoComplete',
+  disabled,
+  dataIndex: 'sku',
+}, {
+  title: 'ITEM NAME',
+  dataIndex: 'name',
+}, {
+  title: 'UOM',
+  dataIndex: 'uomName',
+}, {
+  title: 'AVAILABLE QTY',
+  dataIndex: 'availableQty',
+}, {
+  title: 'PRICE',
+  dataIndex: 'price',
+  render: <span class="fstat-no" title="function not covered" >(t</span>ext, record) =&gt; <span class="cstat-no" title="statement not covered" >record.price &amp;&amp; `$${record.price}`</span>
+}, {
+  title: 'ORDER QTY',
+  type: 'number',
+  disabled,
+  dataIndex: 'qty',
+}, {
+  title: 'DISCOUNT',
+  type: 'number',
+  disabled,
+  formatter: percentageFormatter,
+  parser: percentageParser,
+  dataIndex: 'discount',
+}, {
+  title: 'TAX',
+  dataIndex: 'tax',
+  render: <span class="fstat-no" title="function not covered" >(t</span>ext, record) =&gt; <span class="cstat-no" title="statement not covered" >record.tax &amp;&amp; `$${record.tax}`</span>
+}, {
+  title: 'TOTAL',
+  dataIndex: 'total',
+  render: <span class="fstat-no" title="function not covered" >(t</span>ext, record) =&gt; <span class="cstat-no" title="statement not covered" >record.price &amp;&amp; (`$${(((record.qty * record.price) - ((record.qty * record.price) * (record.discount / 100))) + record.tax).toFixed(2)}`)</span>
+}];
+&nbsp;
+export const getButtonsByStatus = <span class="fstat-no" title="function not covered" >(s</span>tatus, saveHandler, updateHandler) =&gt; {
+<span class="cstat-no" title="statement not covered" >  switch (status.toLowerCase()) {</span>
+    case 'not saved':
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        saveButtonVisible: true,
+        saveButtonText: 'Confirm',
+        saveButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >saveHandler(formData, 'confirm'),</span>
+        updateButtonVisible: true,
+        updateButtonText: 'Save as Draft',
+        updateButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >saveHandler(formData, 'draft'),</span>
+        cancelButtonVisible: false,
+      };
+    case 'draft':
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        saveButtonVisible: true,
+        saveButtonText: 'Confirm',
+        saveButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >updateHandler(formData, 'confirm'),</span>
+        updateButtonVisible: true,
+        updateButtonText: 'Save',
+        updateButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >updateHandler(formData, 'draft'),</span>
+        cancelButtonVisible: false,
+      };
+    case 'confirmed':
+    case 'backorder':
+    case 'partialallocated':
+    case 'allocated':
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        saveButtonVisible: true,
+        saveButtonText: 'Amend',
+        saveButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >updateHandler(formData, 'amend'),</span>
+        updateButtonVisible: false,
+        cancelButtonVisible: true,
+        cancelButtonText: 'Cancel',
+        cancelButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >updateHandler(formData, 'cancel'),</span>
+      };
+    case 'shipped':
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        saveButtonVisible: false,
+        updateButtonVisible: true,
+        updateButtonText: 'Return',
+        updateButtonHandler: <span class="fstat-no" title="function not covered" >fo</span>rmData =&gt; <span class="cstat-no" title="statement not covered" >saveHandler(formData, 'return'),</span>
+        cancelButtonVisible: false,
+      };
+    default:
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        saveButtonVisible: false,
+        updateButtonVisible: false,
+        cancelButtonVisible: false,
+      };
+  }
+};
+&nbsp;
+export const prepareOrder = <span class="fstat-no" title="function not covered" >(f</span>ormData, operation) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  id: formData.id,
+  addresses: {
+    billingAddressId: formData.billingAddress.id,
+    shippingAddressId: formData.shippingAddress.id
+  },
+  channelId: formData.channel.id,
+  customerId: formData.customer.id,
+  customerNotes: formData.customerNotes,
+  deliveryDate: moment(formData.deliveryDate).format('DD-MMMM-YYYY'),
+  deliveryMethodId: formData.deliveryMethodId,
+  deliverySlotId: formData.deliverySlotId,
+  operation,
+  paymentTermsId: Number(formData.paymentTerms.id),
+  promotionId: formData.promotion.id,
+  skuDetails: formData.skuDetails.map(<span class="fstat-no" title="function not covered" >sk</span>uDetail =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    id: skuDetail.id,
+    sku: skuDetail.sku,
+    qty: skuDetail.qty,
+    discount: skuDetail.discount,
+  }))
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../../sorter.js"></script>
+</body>
+</html>

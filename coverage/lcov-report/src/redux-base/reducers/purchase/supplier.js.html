@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/redux-base/reducers/purchase/supplier.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/redux-base/reducers/purchase</a> supplier.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.11% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>35/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  PURCHASE_SUPPLIER_INFO_GET,
+  PURCHASE_SUPPLIER_SAVE,
+  PURCHASE_SUPPLIER_UPDATE,
+  PURCHASE_SUPPLIER_NOTES_GET,
+  PURCHASE_SUPPLIER_NOTES_SAVE,
+  PURCHASE_SUPPLIER_LOCATIONS_GET,
+  PURCHASE_SUPPLIER_LOCATIONS_SAVE,
+  PURCHASE_SUPPLIER_LOCATIONS_UPDATE,
+  PURCHASE_SUPPLIER_LOCATIONS_DELETE,
+  PURCHASE_SUPPLIER_CONTACTS_GET,
+  PURCHASE_SUPPLIER_CONTACTS_SAVE,
+  PURCHASE_SUPPLIER_CONTACTS_UPDATE,
+  PURCHASE_SUPPLIER_CONTACTS_DELETE,
+  PURCHASE_SUPPLIER_ORDERS_GET,
+  PURCHASE_SUPPLIER_PRICE_LIST_GET_PARALLEL,
+  PURCHASE_SUPPLIER_PRICE_LIST_UPDATE,
+  STATE_CITIES_GET,
+  ERROR
+} from 'redux-base/actions';
+&nbsp;
+// --------------------------- Reducer function --------------------------
+const initialState = {
+  supplierData: null,
+  supplierCreated: false,
+  notes: [],
+  locations: [],
+  contacts: [],
+  orders: [],
+  priceLists: [],
+  priceListData: {
+    data: [],
+    priceList: {}
+  },
+  loadingPage: false,
+  needReloadNotes: false,
+  needReloadLocations: false,
+  needReloadContacts: false,
+  needReloadPriceLists: false
+};
+&nbsp;
+export default function supplier(state = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  switch (action.type) {
+    case PURCHASE_SUPPLIER_INFO_GET.REQUEST:
+    case PURCHASE_SUPPLIER_SAVE.REQUEST:
+    case PURCHASE_SUPPLIER_UPDATE.REQUEST:
+    case PURCHASE_SUPPLIER_NOTES_GET.REQUEST:
+    case PURCHASE_SUPPLIER_NOTES_SAVE.REQUEST:
+    case PURCHASE_SUPPLIER_LOCATIONS_GET.REQUEST:
+    case PURCHASE_SUPPLIER_LOCATIONS_SAVE.REQUEST:
+    case PURCHASE_SUPPLIER_LOCATIONS_UPDATE.REQUEST:
+    case PURCHASE_SUPPLIER_LOCATIONS_DELETE.REQUEST:
+    case PURCHASE_SUPPLIER_CONTACTS_GET.REQUEST:
+    case PURCHASE_SUPPLIER_CONTACTS_SAVE.REQUEST:
+    case PURCHASE_SUPPLIER_CONTACTS_UPDATE.REQUEST:
+    case PURCHASE_SUPPLIER_CONTACTS_DELETE.REQUEST:
+    case PURCHASE_SUPPLIER_ORDERS_GET.REQUEST:
+    case PURCHASE_SUPPLIER_PRICE_LIST_GET_PARALLEL.REQUEST:
+    case PURCHASE_SUPPLIER_PRICE_LIST_UPDATE.REQUEST:
+    case STATE_CITIES_GET.REQUEST:
+      return {
+        ...state,
+        loadingPage: true,
+        needReloadNotes: false,
+        needReloadLocations: false,
+        needReloadContacts: false,
+        needReloadPriceLists: false
+      };
+    // supplier data
+    case PURCHASE_SUPPLIER_INFO_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        supplierData: action.data,
+      };
+    case PURCHASE_SUPPLIER_SAVE.SUCCESS:
+    case PURCHASE_SUPPLIER_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        supplierCreated: true,
+        supplierData: action.data
+      };
+    // locations
+    case PURCHASE_SUPPLIER_LOCATIONS_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        locations: action.data,
+      };
+    case PURCHASE_SUPPLIER_LOCATIONS_SAVE.SUCCESS:
+    case PURCHASE_SUPPLIER_LOCATIONS_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadLocations: true,
+      };
+    case PURCHASE_SUPPLIER_LOCATIONS_DELETE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadLocations: true,
+        needReloadContacts: true,
+      };
+    // contacts
+    case PURCHASE_SUPPLIER_CONTACTS_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        contacts: action.data,
+      };
+    case PURCHASE_SUPPLIER_CONTACTS_SAVE.SUCCESS:
+    case PURCHASE_SUPPLIER_CONTACTS_UPDATE.SUCCESS:
+    case PURCHASE_SUPPLIER_CONTACTS_DELETE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadContacts: true,
+      };
+    // orders
+    case PURCHASE_SUPPLIER_ORDERS_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        orders: action.data,
+      };
+    // price lists
+    case PURCHASE_SUPPLIER_PRICE_LIST_GET_PARALLEL.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        priceListData: action.data[0],
+        priceLists: action.data[1]
+      };
+    case PURCHASE_SUPPLIER_PRICE_LIST_UPDATE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadPriceLists: true
+      };
+    // notes
+    case PURCHASE_SUPPLIER_NOTES_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        notes: action.data,
+      };
+    case PURCHASE_SUPPLIER_NOTES_SAVE.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false,
+        needReloadNotes: true
+      };
+    case STATE_CITIES_GET.SUCCESS:
+      return {
+        ...state,
+        loadingPage: false
+      };
+    case ERROR:
+      return {
+        ...state,
+        loadingPage: false,
+      };
+<span class="branch-35 cbranch-no" title="branch not covered" >    default:</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...state,
+        supplierCreated: false
+      };
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

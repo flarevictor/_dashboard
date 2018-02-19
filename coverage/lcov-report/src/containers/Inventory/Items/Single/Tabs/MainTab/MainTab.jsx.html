@@ -1,0 +1,1715 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/containers/Inventory/Items/Single/Tabs/MainTab/MainTab.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">src/containers/Inventory/Items/Single/Tabs/MainTab</a> MainTab.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.43% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.39% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Row, Col } from 'react-flexbox-grid';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import {
+  FormInput,
+  FormTextArea,
+  FormSelect,
+  Controls
+} from 'components';
+import { OpenIcon, CloseIcon } from 'icons';
+import {
+  itemInfoSaveRequest,
+  itemInfoUpdateRequest,
+  uomGetRequest,
+  errorMessage
+} from 'redux-base/actions';
+import { last, map, cloneDeep } from 'lodash';
+import { Spin } from 'antd';
+import { getMenuItems } from 'utils';
+import ProductVariants from './ProductVariants';
+import {
+  convertItemOptions,
+  initializeItemOptions,
+  initializeItemVariants,
+  generateNewItemProductVariants,
+  addExistingItemProductVariantsByTag,
+  deleteExistingItemProductVariantsByTag
+} from './mainTabHelpers';
+import styles from './MainTab.scss';
+&nbsp;
+const selector = formValueSelector('inventoryMainForm');
+&nbsp;
+const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  // triggers
+  loadingPage: state.item.loadingPage,
+  loadingUoms: state.uom.loadingPage,
+  // static data
+  countries: state.commonData.countries,
+  categories: state.commonData.categories,
+  taxCategories: state.commonData.taxCategories,
+  zoneTypes: state.commonData.zoneTypes,
+  defaultLocations: state.commonData.defaultLocations,
+  skuStatusTypes: state.commonData.skuStatusTypes,
+  uoms: state.uom.data,
+  // form values
+  initialValues: state.item.itemInfo,
+  defaultVariantColumnValues: selector(
+    state,
+    'taxCategoryId',
+    'defaultLocationId',
+    'storageConditionId',
+    'statusId')
+});
+&nbsp;
+const mapDispatchToProps = {
+  itemInfoSaveRequest,
+  itemInfoUpdateRequest,
+  uomGetRequest,
+  push,
+  errorMessage
+};
+&nbsp;
+const reduxFormConfig = {
+  form: 'inventoryMainForm',
+  enableReinitialize: true
+};
+&nbsp;
+export class MainTab extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      productVariantsVisible: false,
+      productOptions: [],
+      productVariants: []
+    };
+  }
+&nbsp;
+  componentDidMount() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.isNewSkuItem) {
+<span class="cstat-no" title="statement not covered" >      this.props.uomGetRequest();</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(nextProps) {
+    // when we create price list redirect to edit page
+<span class="cstat-no" title="statement not covered" >    if (nextProps.initialValues.id &amp;&amp; nextProps.isNewSkuItem) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.push('/inventory/all-items');</span>
+    } else <span class="cstat-no" title="statement not covered" >if (!nextProps.isNewSkuItem &amp;&amp; nextProps.initialValues.options) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        productOptions: initializeItemOptions(nextProps.initialValues.options),
+        productVariants: initializeItemVariants(nextProps.initialValues.variants, nextProps.initialValues.options)
+      });
+    }
+  }
+&nbsp;
+  handleSaveNewItem = (formData) =&gt; {
+    this.props.itemInfoSaveRequest({
+      payload: {
+        name: formData.name,
+        sku: formData.sku,
+        brand: formData.brand,
+        categoryId: formData.categoryId,
+        taxCategoryId: formData.taxCategoryId,
+        uomId: formData.uomId,
+        defaultLocationId: formData.defaultLocationId,
+        originCountryId: formData.originCountryId,
+        options: this.state.productOptions.map(<span class="fstat-no" title="function not covered" >po</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+          key: po.key,
+          values: po.values.map(<span class="fstat-no" title="function not covered" >ob</span>j =&gt; <span class="cstat-no" title="statement not covered" >obj.value)</span>
+        })),
+        variants: this.state.productVariants.map(<span class="fstat-no" title="function not covered" >pv</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+          name: pv.name,
+          sku: pv.sku,
+          options: pv.name.split('/')
+        }))
+      }
+    });
+  }
+&nbsp;
+  handleSaveExistingItem = (formData) =&gt; {
+    this.props.itemInfoUpdateRequest({
+      payload: {
+        id: formData.id,
+        name: formData.name,
+        brand: formData.brand,
+        categoryId: formData.categoryId,
+        taxCategoryId: formData.taxCategoryId,
+        uomId: formData.uomId,
+        defaultLocationId: formData.defaultLocationId,
+        originCountryId: formData.originCountryId,
+        storageConditionId: formData.storageConditionId,
+        statusId: formData.statusId,
+        description: formData.description,
+        options: this.state.productOptions.map(<span class="fstat-no" title="function not covered" >po</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+          id: po.id,
+          key: po.key,
+          values: po.values.map(<span class="fstat-no" title="function not covered" >ob</span>j =&gt; <span class="cstat-no" title="statement not covered" >obj.value)</span>
+        })),
+        variants: this.state.productVariants.map(<span class="fstat-no" title="function not covered" >va</span>riant =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+          options: variant.options,
+          defaultLocationId: variant.defaultLocationId,
+          id: variant.id,
+          name: variant.name,
+          sku: variant.sku,
+          statusId: variant.statusId,
+          storageConditionId: variant.storageConditionId,
+          taxCategoryId: variant.taxCategoryId
+        }))
+      }
+    });
+  }
+&nbsp;
+  handleAddProductOptionRow = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const productOptions = <span class="cstat-no" title="statement not covered" >[...this.state.productOptions];</span>
+    const lastItem = <span class="cstat-no" title="statement not covered" >last(productOptions);</span>
+<span class="cstat-no" title="statement not covered" >    productOptions.push({</span>
+      id: (lastItem &amp;&amp; lastItem.id + 1) || 1,
+      key: '',
+      values: []
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      productOptions
+    });
+  }
+&nbsp;
+  handleUpdateProductOptionsKeys = <span class="fstat-no" title="function not covered" >(u</span>pdatedProductOptions, rowIndex, action) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (action === 'delete' &amp;&amp; this.props.isNewSkuItem) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        productOptions: updatedProductOptions,
+        productVariants: generateNewItemProductVariants(updatedProductOptions)
+      });
+    } else {
+<span class="cstat-no" title="statement not covered" >      if (updatedProductOptions.find(<span class="fstat-no" title="function not covered" >(p</span>o, index) =&gt; <span class="cstat-no" title="statement not covered" >rowIndex !== index &amp;&amp; po.key.toLowerCase() === updatedProductOptions[rowIndex].key.toLowerCase())</span>) {</span>
+<span class="cstat-no" title="statement not covered" >        this.props.errorMessage({ message: 'Option key must be unique' });</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.setState({ // update option keys</span>
+        productOptions: updatedProductOptions
+      });
+    }
+  }
+&nbsp;
+  handleUpdateProductOptionsValues = (updatedProductOptions, action, tag, updatedRowIndex) =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (action === 'uniqError' // check for option row and cross option rows uniqness
+      || (<span class="branch-1 cbranch-no" title="branch not covered" >action === 'add' </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >this.state.productOptions.find(<span class="fstat-no" title="function not covered" >(p</span>o, index) =&gt; <span class="cstat-no" title="statement not covered" >po.values.find(<span class="fstat-no" title="function not covered" >ob</span>j =&gt; <span class="cstat-no" title="statement not covered" >updatedRowIndex === index &amp;&amp; obj.value.toLowerCase() === tag.toLowerCase())</span>)</span>)</span>) {
+      this.props.errorMessage({ message: 'Option values must be unique' });
+    } else {
+&nbsp;
+      const { productVariants } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+      let newProductVariants;
+&nbsp;
+      const { isNewSkuItem } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (action === 'add') {</span>
+        // make new tag closable in updated options
+        const convertedProductOptions = <span class="cstat-no" title="statement not covered" >convertItemOptions(updatedProductOptions, tag, updatedRowIndex);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (isNewSkuItem) { // generate items for new item</span>
+<span class="cstat-no" title="statement not covered" >          newProductVariants = generateNewItemProductVariants(convertedProductOptions);</span>
+        } else { // generate items for exisiting item
+&nbsp;
+          const { defaultVariantColumnValues } = <span class="cstat-no" title="statement not covered" >this.props;</span> // used to initialize new variant column values
+          const notIncludeExistingVariants = <span class="cstat-no" title="statement not covered" >this.state.productOptions.some(<span class="fstat-no" title="function not covered" >po</span> =&gt; <span class="cstat-no" title="statement not covered" >po.values.length === 0)</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          newProductVariants = addExistingItemProductVariantsByTag(</span>
+            defaultVariantColumnValues,
+            convertedProductOptions,
+            tag,
+            notIncludeExistingVariants,
+            productVariants
+          );
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+          productOptions: updatedProductOptions,
+          productVariants: newProductVariants
+        });
+&nbsp;
+      } else <span class="cstat-no" title="statement not covered" >if (action === 'delete') {</span>
+        const productOptions = <span class="cstat-no" title="statement not covered" >map(this.state.productOptions, cloneDeep);</span>
+&nbsp;
+        const newValues = <span class="cstat-no" title="statement not covered" >productOptions[updatedRowIndex].values.filter(<span class="fstat-no" title="function not covered" >ob</span>j =&gt; <span class="cstat-no" title="statement not covered" >obj.value !== tag.value)</span>;</span>
+<span class="cstat-no" title="statement not covered" >        productOptions[updatedRowIndex].values = newValues;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        newProductVariants = deleteExistingItemProductVariantsByTag(</span>
+          productVariants,
+          tag.value
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+          productOptions,
+          productVariants: newProductVariants
+        });
+      }
+    }
+  }
+&nbsp;
+  handleUpdateProductVariants = <span class="fstat-no" title="function not covered" >(u</span>pdatedProductVariants, rowIndex, action) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (action === 'delete') {</span>
+      const productOptions = <span class="cstat-no" title="statement not covered" >map(this.state.productOptions, cloneDeep);</span>
+      const productVariants = <span class="cstat-no" title="statement not covered" >map(this.state.productVariants, cloneDeep);</span>
+&nbsp;
+      const variantOptions = <span class="cstat-no" title="statement not covered" >productVariants[rowIndex].options;</span> // get deleted variant options
+&nbsp;
+      // check if one of the options in the deleted variant exists on other variant, if no delete this option value form product options
+<span class="cstat-no" title="statement not covered" >      variantOptions.forEach(<span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {</span>
+        const exisitingVariantsByOptionValue = <span class="cstat-no" title="statement not covered" >updatedProductVariants.filter(<span class="fstat-no" title="function not covered" >pv</span> =&gt; <span class="cstat-no" title="statement not covered" >pv.options.includes(value))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (exisitingVariantsByOptionValue.length === 0) {</span>
+&nbsp;
+          const option = <span class="cstat-no" title="statement not covered" >productOptions.find(<span class="fstat-no" title="function not covered" >po</span> =&gt; <span class="cstat-no" title="statement not covered" >po.values.find(<span class="fstat-no" title="function not covered" >po</span>v =&gt; <span class="cstat-no" title="statement not covered" >pov.value === value)</span>)</span>;</span>
+&nbsp;
+          const indexOfOption = <span class="cstat-no" title="statement not covered" >productOptions.indexOf(option);</span>
+          const newValues = <span class="cstat-no" title="statement not covered" >productOptions[indexOfOption].values.filter(<span class="fstat-no" title="function not covered" >ob</span>j =&gt; <span class="cstat-no" title="statement not covered" >obj.value !== value)</span>;</span>
+<span class="cstat-no" title="statement not covered" >          productOptions[indexOfOption].values = newValues;</span>
+        }
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        productOptions,
+        productVariants: updatedProductVariants
+      });
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        productVariants: updatedProductVariants
+      });
+    }
+  }
+&nbsp;
+  handleToggleProductVariants = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      productVariantsVisible: !this.state.productVariantsVisible
+    });
+  }
+&nbsp;
+  render() {
+    const {
+      productVariantsVisible,
+      productOptions,
+      productVariants
+    } = this.state;
+&nbsp;
+    const {
+      // form
+      handleSubmit,
+      // triggers
+      loadingPage,
+      loadingUoms,
+      isNewSkuItem,
+      hasInitialProductVariants = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+      productKeyColumnDisabled = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+      // static data
+      categories,
+      taxCategories,
+      uoms,
+      defaultLocations,
+      countries,
+      zoneTypes,
+      skuStatusTypes
+    } = this.props;
+    return (
+      &lt;Spin spinning={ loadingPage || loadingUoms }&gt;
+        &lt;form
+          className={ styles.form }
+          onSubmit={ handleSubmit(isNewSkuItem ? <span class="branch-0 cbranch-no" title="branch not covered" >this.handleSaveNewItem </span>: this.handleSaveExistingItem) }
+        &gt;
+          &lt;Row&gt;
+            &lt;Col xs md lg={ 6 }&gt;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Product Name&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="name"
+                    placeholder="Required"
+                    component={ FormInput }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;SKU&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="sku"
+                    placeholder="Autogenerated or Manual (Required)"
+                    component={ FormInput }
+                    disabled={ !isNewSkuItem }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Brand&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="brand"
+                    placeholder="Optional"
+                    component={ FormInput }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Country Of Origin&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="originCountryId"
+                    placeholder="Choose country"
+                    component={ FormSelect }
+                    menuItems={ getMenuItems(countries) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Product Category&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="categoryId"
+                    placeholder="Add new category if not found"
+                    component={ FormSelect }
+                    menuItems={ getMenuItems(categories) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              { !hasInitialProductVariants &amp;&amp;
+              &lt;Row end="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Tax Category&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="taxCategoryId"
+                    placeholder="Add new category if not found"
+                    component={ FormSelect }
+                    menuItems={ getMenuItems(taxCategories) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              }
+            &lt;/Col&gt;
+            &lt;Col xs md lg={ 6 }&gt;
+              &lt;Row start="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Default Sell UOM&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="uomId"
+                    component={ FormSelect }
+                    placeholder="Choose UOM"
+                    menuItems={ getMenuItems(uoms) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              { !hasInitialProductVariants &amp;&amp;
+              &lt;Row start="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Default Location&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="defaultLocationId"
+                    component={ FormSelect }
+                    placeholder="Choose location"
+                    menuItems={ getMenuItems(defaultLocations) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              }
+              { !isNewSkuItem &amp;&amp; !hasInitialProductVariants &amp;&amp;
+              &lt;Row start="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Storage Conditions&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="storageConditionId"
+                    component={ FormSelect }
+                    placeholder="Choose storage condition"
+                    menuItems={ getMenuItems(zoneTypes) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              }
+              { !isNewSkuItem &amp;&amp; !hasInitialProductVariants &amp;&amp;
+              &lt;Row start="xs" middle="xs"&gt;
+                &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                  &lt;label&gt;Status&lt;/label&gt;
+                &lt;/Col&gt;
+                &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                  &lt;Field
+                    name="statusId"
+                    component={ FormSelect }
+                    placeholder="Choose storage condition"
+                    menuItems={ getMenuItems(skuStatusTypes) }
+                  /&gt;
+                &lt;/Col&gt;
+              &lt;/Row&gt;
+              }
+              { !isNewSkuItem &amp;&amp;
+                &lt;Row start="xs" middle="xs"&gt;
+                  &lt;Col xs md={ 2 } lg={ 3 }&gt;
+                    &lt;label&gt;Description&lt;/label&gt;
+                  &lt;/Col&gt;
+                  &lt;Col xs md={ 6 } lg={ 5 }&gt;
+                    &lt;Field
+                      name="description"
+                      placeholder="Description"
+                      component={ FormTextArea }
+                    /&gt;
+                  &lt;/Col&gt;
+                &lt;/Row&gt;
+              }
+            &lt;/Col&gt;
+          &lt;/Row&gt;
+          { isNewSkuItem &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;Row start="xs" middle="xs"&gt;</span>
+            &lt;Col xs md={ 2 } lg={ 5 }&gt;
+              &lt;div className={ styles.addProductVariantsTitle }&gt;
+                { productVariantsVisible &amp;&amp;
+                  &lt;CloseIcon
+                    onClick={ this.handleToggleProductVariants }
+                  /&gt;
+                }
+                { !productVariantsVisible &amp;&amp;
+                  &lt;OpenIcon
+                    onClick={ this.handleToggleProductVariants }
+                  /&gt;
+                }
+                &lt;span className={ styles.productVariantsTitle }&gt;
+                  { `${productVariants.length === 0 ? 'Add' : 'Edit'} Product Variants` }
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/Col&gt;
+            &lt;Col xs md={ 6 } lg={ 3 } /&gt;
+          &lt;/Row&gt;
+          }
+          { isNewSkuItem &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >productVariantsVisible </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >          &lt;Row&gt;</span>
+            &lt;Col xs md lg&gt;
+              A product can have one or multiple variants, eg. multiple sizes or colors. Each variant has its own
+              set of prices, stock levels, tax options, etc.
+              Create variants by defining attributes
+            &lt;/Col&gt;
+          &lt;/Row&gt;
+          }
+          { (productVariantsVisible || hasInitialProductVariants) &amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >            &lt;ProductVariants</span>
+              isNewSkuItem={ isNewSkuItem }
+              hasInitialProductVariants={ hasInitialProductVariants }
+              productKeyColumnDisabled={ productKeyColumnDisabled }
+              productOptions={ productOptions }
+              productVariants={ productVariants }
+              handleAddProductOptionRow={ this.handleAddProductOptionRow }
+              handleUpdateProductOptionsKeys={ this.handleUpdateProductOptionsKeys }
+              handleUpdateProductOptionsValues={ this.handleUpdateProductOptionsValues }
+              handleUpdateProductVariants={ this.handleUpdateProductVariants }
+            /&gt;
+          }
+          &lt;Controls
+            submitButtonVisible
+            cancelButtonVisible={ false }
+          /&gt;
+        &lt;/form&gt;
+      &lt;/Spin&gt;
+    );
+  }
+}
+&nbsp;
+MainTab.propTypes = {
+  // triggers
+  loadingPage: PropTypes.bool.isRequired,
+  loadingUoms: PropTypes.bool.isRequired,
+  isNewSkuItem: PropTypes.bool.isRequired,
+  hasInitialProductVariants: PropTypes.bool,
+  productKeyColumnDisabled: PropTypes.bool,
+  // data
+  itemId: PropTypes.string,
+  defaultVariantColumnValues: PropTypes.object.isRequired,
+  // static data
+  countries: PropTypes.array.isRequired,
+  categories: PropTypes.array.isRequired,
+  taxCategories: PropTypes.array.isRequired,
+  defaultLocations: PropTypes.array.isRequired,
+  zoneTypes: PropTypes.array.isRequired,
+  skuStatusTypes: PropTypes.array.isRequired,
+  uoms: PropTypes.array.isRequired,
+  // redux-base
+  itemInfoSaveRequest: PropTypes.func.isRequired,
+  itemInfoUpdateRequest: PropTypes.func.isRequired,
+  uomGetRequest: PropTypes.func.isRequired,
+  errorMessage: PropTypes.func.isRequired,
+  // redux-form
+  initialValues: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  // router
+  push: PropTypes.func.isRequired,
+};
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(reduxFormConfig)(MainTab));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

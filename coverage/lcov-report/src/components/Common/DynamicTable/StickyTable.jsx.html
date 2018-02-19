@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/Common/DynamicTable/StickyTable.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/components/Common/DynamicTable</a> StickyTable.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.79% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>101/149</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>38/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.57% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>100/148</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">137x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">137x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable react/no-array-index-key, react/sort-comp */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import elementResizeEvent from 'element-resize-event';
+import { Table, Row } from './TableComponents';
+import styles from './StickyTable.scss';
+&nbsp;
+const getColRowCount = rows =&gt; ({
+  rowCount: rows.length,
+  columnCount: (rows[0] &amp;&amp; React.Children.toArray(rows[0].props.children).length) || 0
+});
+&nbsp;
+class StickyTable extends Component {
+  constructor(props) {
+    super(props);
+    const rc = getColRowCount(props.children);
+&nbsp;
+    this.suppressScroll = false;
+&nbsp;
+    this.state = {
+      rowCount: rc.rowCount,
+      columnCount: rc.columnCount,
+      stickyColumnCount: props.stickyColumnCount === 0 ? 0 : (props.stickyColumnCount || 1),
+      stickyHeaderCount: props.stickyHeaderCount === 0 ? 0 : (props.stickyHeaderCount || 1)
+    };
+    this.maxHeight = this.getNodeSize(document.getElementById('main')).height * 0.65; // set max height at 83% of main container
+  }
+&nbsp;
+  componentDidMount() {
+    this.table = document.getElementById('frood-sticky-table');
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.table) {
+      this.realTable = this.table.querySelector('#sticky-table-x-wrapper').firstChild;
+      this.xWrapper = this.table.querySelector('#sticky-table-x-wrapper');
+      this.yWrapper = this.table.querySelector('#sticky-table-y-wrapper');
+      this.xScrollbar = this.table.querySelector('#x-scrollbar');
+      this.yScrollbar = this.table.querySelector('#y-scrollbar');
+      this.stickyHeader = this.table.querySelector('#sticky-header');
+      this.stickyColumn = this.table.querySelector('#sticky-column');
+      this.stickyCorner = this.table.querySelector('#sticky-corner');
+      this.rightBottomCorner = this.table.querySelector('#right-bottom-corner');
+&nbsp;
+      elementResizeEvent(this.realTable, this.onResize);
+      elementResizeEvent(document.body, this.onResizeBody);
+&nbsp;
+      this.xWrapper.addEventListener('scroll', this.onScrollX);
+&nbsp;
+      this.onResize();
+      setTimeout(this.onResize);
+      this.addScrollBarEventHandlers();
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(nextProps) {
+    const rc = <span class="cstat-no" title="statement not covered" >getColRowCount(nextProps.children);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      rowCount: rc.rowCount,
+      columnCount: rc.columnCount
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentDidUpdate() {
+<span class="cstat-no" title="statement not covered" >    this.onResize();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillUnmount() {
+<span class="cstat-no" title="statement not covered" >    if (this.table) {</span>
+<span class="cstat-no" title="statement not covered" >      this.xWrapper.removeEventListener('scroll', this.onScrollX);</span>
+    }
+  }
+&nbsp;
+  onResizeBody = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.yWrapper.style.maxHeight = `${this.getNodeSize(document.getElementById('main')).height * 0.65}px`;</span>
+  }
+&nbsp;
+  onResize = () =&gt; {
+    this.setCornersVisibility();
+    this.setRowHeights();
+    this.setStickyCellsHeight();
+    this.setColumnWidths();
+    this.setScrollBarDims();
+    this.setScrollBarWrapperDims();
+  }
+&nbsp;
+  onScrollX = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const scrollLeft = <span class="cstat-no" title="statement not covered" >Math.max(this.xWrapper.scrollLeft, 0);</span> // Can't have it being less than 0...
+<span class="cstat-no" title="statement not covered" >    this.stickyHeader.style.transform = `translate3d(${-1 * scrollLeft}px, 0, 0)`;</span>
+  }
+&nbsp;
+  setCornersVisibility = () =&gt; {
+    const tableWidth = this.table.offsetWidth;
+    const tableHeight = this.table.offsetHeight;
+    const contentWidth = this.xScrollbar.firstChild.offsetWidth;
+    const contentHeight = this.yScrollbar.firstChild.offsetHeight;
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (tableWidth &gt;= contentWidth &amp;&amp; tableHeight &gt;= contentHeight) {
+      this.rightBottomCorner.style.display = 'none';
+      this.table.style.paddingBottom = '0';
+      this.xWrapperMargin = 0;
+      this.yWrapperMargin = 0;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (tableWidth &lt;= contentWidth &amp;&amp; tableHeight &lt;= contentHeight) {
+      this.rightBottomCorner.style.display = 'block';
+      this.table.style.paddingBottom = '13px';
+      this.xWrapperMargin = 14;
+      this.yWrapperMargin = 14;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (tableWidth &gt;= contentWidth &amp;&amp; tableHeight &lt;= contentHeight) {
+      this.rightBottomCorner.style.display = 'none';
+      this.table.style.paddingBottom = '0';
+      this.xWrapperMargin = 0;
+      this.yWrapperMargin = 0;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (tableWidth &lt;= contentWidth &amp;&amp; tableHeight &gt;= contentHeight) {
+      this.rightBottomCorner.style.display = 'none';
+      this.table.style.paddingBottom = '13px';
+      this.xWrapperMargin = 0;
+      this.yWrapperMargin = 0;
+    }
+  }
+&nbsp;
+  setScrollBarDims = () =&gt; {
+    this.xScrollbar.firstChild.style.width = `${this.getNodeSize(this.realTable.firstChild).width - this.stickyColumn.offsetWidth - this.xWrapperMargin}px`;
+    this.yScrollbar.firstChild.style.height = `${this.getNodeSize(this.realTable).height - this.stickyHeader.offsetHeight - this.yWrapperMargin}px`;
+  }
+&nbsp;
+  setScrollBarWrapperDims = () =&gt; {
+    this.xScrollbar.style.width = `calc(100% - ${this.stickyColumn.offsetWidth + this.xWrapperMargin}px)`;
+    this.xScrollbar.style.left = `${this.stickyColumn.offsetWidth}px`;
+&nbsp;
+    this.yScrollbar.style.height = `calc(100% - ${this.stickyHeader.offsetHeight + this.yWrapperMargin}px)`;
+    this.yScrollbar.style.top = `${this.stickyHeader.offsetHeight}px`;
+  }
+&nbsp;
+  getNodeSize = (node) =&gt; {
+    const nodeStyle = this.getStyle(node);
+    const width = node.offsetWidth
+      - parseFloat(nodeStyle.paddingLeft)
+      - parseFloat(nodeStyle.paddingRight)
+      - parseInt(nodeStyle.borderLeftWidth, 10)
+      - parseInt(nodeStyle.borderRightWidth, 10);
+&nbsp;
+    const height = node.offsetHeight
+      - parseFloat(nodeStyle.paddingTop)
+      - parseFloat(nodeStyle.paddingBottom)
+      - parseInt(nodeStyle.borderTopWidth, 10)
+      - parseInt(nodeStyle.borderBottomWidth, 10);
+&nbsp;
+    return { width, height };
+  }
+&nbsp;
+  getStyle = (node) =&gt; {
+    const browserSupportsComputedStyle = typeof getComputedStyle !== 'undefined';
+&nbsp;
+    return browserSupportsComputedStyle ? getComputedStyle(node, null) : <span class="branch-1 cbranch-no" title="branch not covered" >node.currentStyle;</span>
+  }
+&nbsp;
+  getStickyCorner = (rows) =&gt; {
+    const stickyCorner = [];
+    const cell = React.Children.toArray(rows[0].props.children)[0];
+&nbsp;
+    stickyCorner.push(
+      &lt;Row key="stickyCornerCell"&gt;
+        {cell}
+      &lt;/Row&gt;
+    );
+&nbsp;
+    return stickyCorner;
+  }
+&nbsp;
+  getStickyHeader = (rows) =&gt; {
+    const row = rows[0];
+    const cells = [];
+&nbsp;
+    React.Children.toArray(row.props.children).forEach((cell, c) =&gt; {
+      cells.push(React.cloneElement(cell, { id: `sticky-header-cell-${c}`, key: `${c}stickyHeaderCol` }));
+    });
+&nbsp;
+    return (
+      &lt;Row id="sticky-header-row"&gt;
+        {cells}
+      &lt;/Row&gt;
+    );
+  }
+&nbsp;
+  getStickyColumn = (rows) =&gt; {
+    let cells;
+    const stickyRows = [];
+&nbsp;
+    rows.forEach((row, r) =&gt; {
+      cells = React.Children.toArray(row.props.children);
+&nbsp;
+      stickyRows.push(
+        &lt;Row key={ `${r}stickyColRow` }&gt;
+          { cells[0] }
+        &lt;/Row&gt;
+      );
+    });
+&nbsp;
+    return stickyRows;
+  }
+&nbsp;
+  setRowHeights = () =&gt; {
+    let r;
+    let cellToCopy;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.stickyColumnCount) {
+<span class="cstat-no" title="statement not covered" >      for (r = 0; r &lt; this.rowCount; r += 1) {</span>
+<span class="cstat-no" title="statement not covered" >        cellToCopy = this.realTable.childNodes[r].firstChild;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (cellToCopy) {</span>
+          const { height } = <span class="cstat-no" title="statement not covered" >this.getNodeSize(cellToCopy);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          this.stickyColumn.firstChild.childNodes[r].firstChild.style.height = `${height}px`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (r === 0 &amp;&amp; this.stickyCorner.firstChild.firstChild) {</span>
+<span class="cstat-no" title="statement not covered" >            this.stickyCorner.firstChild.firstChild.firstChild.style.height = `${height}px`;</span>
+          }
+        }
+      }
+    }
+  }
+&nbsp;
+  setColumnWidths = () =&gt; {
+    if (this.state.stickyHeaderCount) {
+      for (let c = 0; c &lt; this.state.columnCount; c += 1) {
+        const cellToCopy = <span class="cstat-no" title="statement not covered" >this.realTable.firstChild.childNodes[c];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (cellToCopy) {</span>
+          const { width } = <span class="cstat-no" title="statement not covered" >this.getNodeSize(cellToCopy);</span>
+          let cell = <span class="cstat-no" title="statement not covered" >this.table.querySelector(`#sticky-header-cell-${c}`);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          cell.style.width = `${width}px`;</span>
+<span class="cstat-no" title="statement not covered" >          cell.style.minWidth = `${width}px`;</span>
+<span class="cstat-no" title="statement not covered" >          cell.style.boxSizing = 'content-box';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (c === 0 &amp;&amp; this.stickyCorner.firstChild.firstChild) {</span>
+<span class="cstat-no" title="statement not covered" >            cell = this.stickyCorner.firstChild.firstChild.firstChild;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            cell.style.width = `${width}px`;</span>
+<span class="cstat-no" title="statement not covered" >            cell.style.minWidth = `${width}px`;</span>
+          }
+        }
+      }
+    }
+  }
+&nbsp;
+  setStickyCellsHeight = () =&gt; {
+    const secondRow = this.realTable.firstChild.nextSibling;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (secondRow) {
+      const rowHeight = <span class="cstat-no" title="statement not covered" >secondRow.firstChild &amp;&amp; secondRow.firstChild.offsetHeight;</span>
+<span class="cstat-no" title="statement not covered" >      if (rowHeight) {</span>
+<span class="cstat-no" title="statement not covered" >        for (let c = 0; c &lt; this.state.rowCount; c += 1) {</span>
+          const cell = <span class="cstat-no" title="statement not covered" >this.stickyColumn.firstChild.childNodes[c];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (c !== 0) { // skip header cell</span>
+<span class="cstat-no" title="statement not covered" >            cell.style.height = `${rowHeight}px`;</span>
+          }
+        }
+      }
+    }
+  }
+&nbsp;
+  addScrollBarEventHandlers = () =&gt; {
+    // X Scrollbars
+    this.xWrapper.addEventListener('scroll', this.scrollXScrollbar);
+    this.xScrollbar.addEventListener('scroll', <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (!this.suppressScroll) {</span>
+<span class="cstat-no" title="statement not covered" >        this.xWrapper.scrollLeft = this.xScrollbar.scrollLeft;</span>
+<span class="cstat-no" title="statement not covered" >        this.suppressScroll = true;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.suppressScroll = false;</span>
+      }
+    });
+&nbsp;
+    // Y Scrollbars
+    this.yWrapper.addEventListener('scroll', this.scrollYScrollbar);
+    this.yScrollbar.addEventListener('scroll', <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (!this.suppressScroll) {</span>
+<span class="cstat-no" title="statement not covered" >        this.yWrapper.scrollTop = this.yScrollbar.scrollTop;</span>
+<span class="cstat-no" title="statement not covered" >        this.suppressScroll = true;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.suppressScroll = false;</span>
+      }
+    });
+  }
+&nbsp;
+  scrollXScrollbar = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.suppressScroll) {</span>
+<span class="cstat-no" title="statement not covered" >      this.xScrollbar.scrollLeft = this.xWrapper.scrollLeft;</span>
+<span class="cstat-no" title="statement not covered" >      this.suppressScroll = true;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.suppressScroll = false;</span>
+    }
+  }
+&nbsp;
+  scrollYScrollbar = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.suppressScroll) {</span>
+<span class="cstat-no" title="statement not covered" >      this.yScrollbar.scrollTop = this.yWrapper.scrollTop;</span>
+<span class="cstat-no" title="statement not covered" >      this.suppressScroll = true;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.suppressScroll = false;</span>
+    }
+  }
+&nbsp;
+  render() {
+    const { children } = this.props;
+    const { stickyColumnCount, stickyHeaderCount } = this.state;
+    const rows = React.Children.toArray(children);
+&nbsp;
+    let stickyColumn;
+    let stickyHeader;
+    let stickyCorner;
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (rows.length) {
+      if (stickyColumnCount &gt; 0 &amp;&amp; stickyHeaderCount &gt; 0) {
+        stickyCorner = this.getStickyCorner(rows);
+      }
+      if (stickyColumnCount &gt; 0) {
+        stickyColumn = this.getStickyColumn(rows);
+      }
+      if (stickyHeaderCount &gt; 0) {
+        stickyHeader = this.getStickyHeader(rows);
+      }
+    }
+&nbsp;
+    return (
+      &lt;div className={ styles.stickyTable } id="frood-sticky-table"&gt;
+        &lt;div className={ styles.xScrollbar } id="x-scrollbar"&gt;&lt;div /&gt;&lt;/div&gt;
+        &lt;div className={ styles.rightBottomCorner } id="right-bottom-corner" /&gt;
+        &lt;div className={ styles.leftBottomCorner } id="left-bottom-corner" /&gt;
+        &lt;div className={ styles.yScrollbar } id="y-scrollbar"&gt;&lt;div /&gt;&lt;/div&gt;
+        &lt;div className={ styles.stickyCorner } id="sticky-corner"&gt;
+          &lt;Table&gt;{stickyCorner}&lt;/Table&gt;
+        &lt;/div&gt;
+        &lt;div className={ styles.stickyHeader } id="sticky-header"&gt;
+          &lt;Table&gt;{stickyHeader}&lt;/Table&gt;
+        &lt;/div&gt;
+        &lt;div className={ styles.stickyTableYWrapper } style={ { maxHeight: this.maxHeight } } id="sticky-table-y-wrapper"&gt;
+          &lt;div className={ styles.stickyColumn } id="sticky-column"&gt;
+            &lt;Table&gt;{stickyColumn}&lt;/Table&gt;
+          &lt;/div&gt;
+          &lt;div className={ styles.stickyTableXWrapper } id="sticky-table-x-wrapper"&gt;
+            &lt;Table&gt;{rows}&lt;/Table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;
+StickyTable.propTypes = {
+  stickyColumnCount: PropTypes.number,
+  stickyHeaderCount: PropTypes.number,
+  children: PropTypes.array,
+};
+&nbsp;
+export default StickyTable;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 02 2017 15:43:32 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
